@@ -6,10 +6,12 @@ This project is licensed under MIT License. Do something great with it!
 ## Further references
 - WebRTC data channels: http://www.html5rocks.com/en/tutorials/webrtc/datachannels/
 - The awesome PouchDB: http://pouchdb.com/learn.html
+- AngularJS: https://angularjs.org/
 - CoffeeScript: http://coffeescript.org/
 - PeerPouch plugin: https://github.com/natevw/PeerPouch
 - Material Design: http://www.google.com/design/spec/material-design/introduction.html - http://materializecss.com/
 - Sass: http://sass-lang.com/
+- GitFlow
 
 
 Handcrafted in Münster, Germany.

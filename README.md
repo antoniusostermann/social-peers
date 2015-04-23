@@ -8,7 +8,8 @@ This project is licensed under MIT License. Do something great with it!
 - The awesome PouchDB: http://pouchdb.com/learn.html
 - AngularJS: https://angularjs.org/
 - CoffeeScript: http://coffeescript.org/
-- PeerPouch plugin: https://github.com/natevw/PeerPouch
+- Pouch Replication Stream: https://github.com/nolanlawson/pouchdb-replication-stream
+- SimplePeer: https://www.npmjs.com/package/simple-peer
 - Material Design: http://www.google.com/design/spec/material-design/introduction.html - http://materializecss.com/
 - Sass: http://sass-lang.com/
 - GitFlow

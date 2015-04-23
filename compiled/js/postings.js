@@ -3,7 +3,7 @@
   (function($) {
     return $(function() {
       var db, insert;
-      db = new PouchDB('social_peers');
+      db = new PouchDB('db');
       insert = function(post) {
         return $('#posts').append(post.content + "<br>");
       };

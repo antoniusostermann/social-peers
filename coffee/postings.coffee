@@ -1,6 +1,6 @@
 (($) ->
   $ ->
-    db = new PouchDB('social_peers')
+    db = new PouchDB('db')
 
     insert = (post) ->
       $('#posts').append post.content+"<br>"

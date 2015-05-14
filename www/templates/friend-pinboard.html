@@ -1,0 +1,9 @@
+<ion-view view-title="Friends Pinboard">
+  <ion-content padding="1">
+  <h2>My friends pinboard</h2>
+  <p ng-repeat="entry in entries track by $index">
+    <strong>{{entry.date | date}}</strong>:
+    {{entry.content}}
+  </p>
+  </ion-content>
+</ion-view>

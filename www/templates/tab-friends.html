@@ -1,0 +1,38 @@
+<ion-view view-title="Freunde">
+  <ion-content padding="1">
+    <p>
+      You want your friends to be able to sync your pinboard?
+      Just tell them your ID: {{own_id}}<br>
+      Alternativly, just <a href="#" ng-click="openModal();">add them
+      on your own</a>!
+    </p>
+
+    <ul class="list">
+      <li class="item" ng-repeat="friend in friends track by $index">
+        <a ng-href="#/tab/friends/{{friend.id}}"><strong>{{friend.name}}</strong></a>
+        <small>({{friend.id}})</small>
+      </li>
+    </ul>
+
+    <script id="add-friend-modal.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar>
+          <h1 class="title">Add new friend</h1>
+        </ion-header-bar>
+        <ion-content>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label" >ID</span>
+            <input type="text" placeholder="ID" ng-model="new_friend.id">
+          </label>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Display name</span>
+            <input type="text" placeholder="Name"  ng-model="new_friend.name">
+          </label>
+          <button class="button button-positive pull-right" ng-click="addFriend();" id="add-friend">
+            Add
+          </button>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+  </ion-content>
+</ion-view>

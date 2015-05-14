@@ -1,0 +1,26 @@
+<ion-view view-title="Pinboard">
+  <ion-content padding="1">
+  <h2>My pinboard</h2>
+  <a href="#" ng-click="openModal();">Add new entry</a><br>
+  <p ng-repeat="entry in entries track by $index">
+    <strong>{{entry.date | date}}</strong>:
+    {{entry.content}}
+  </p>
+    <script id="add-entry-modal.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar>
+          <h1 class="title">Add new entry</h1>
+        </ion-header-bar>
+        <ion-content>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Entry</span>
+            <input type="text" placeholder="Entry"  id="new-entry">
+          </label>
+          <button class="button button-positive pull-right" ng-click="addEntry();" id="add-entry">
+            Add
+          </button>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+  </ion-content>
+</ion-view>

@@ -4,7 +4,8 @@
   <a href="#" ng-click="openModal();">Add new entry</a><br>
   <p ng-repeat="entry in entries track by $index">
     <strong>{{entry.date | date}}</strong>:
-    {{entry.content}}
+    {{entry.content}}<br>
+    Signatur: {{entry.signature}}
   </p>
     <script id="add-entry-modal.html" type="text/ng-template">
       <ion-modal-view>

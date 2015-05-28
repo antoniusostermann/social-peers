@@ -1,4 +1,4 @@
-<ion-view view-title="Freunde">
+<ion-view view-title="Friends">
   <ion-content padding="1">
     <p>
       You want your friends to be able to sync your pinboard?
@@ -6,6 +6,9 @@
       Alternativly, just <a href="#" ng-click="openModal();">add them
       on your own</a>!
     </p>
+
+    <p>In addition, with version 0.2, you will need to give them your public key:</p>
+    <textarea ng-model="public_key" cols="30" rows="8"></textarea>
 
     <ul class="list">
       <li class="item" ng-repeat="friend in friends track by $index">
@@ -27,6 +30,9 @@
           <label class="item item-input item-stacked-label">
             <span class="input-label">Display name</span>
             <input type="text" placeholder="Name"  ng-model="new_friend.name">
+          </label>
+          <label class="item item-input">
+            <textarea placeholder="Public key" ng-model="new_friend.public_key"></textarea>
           </label>
           <button class="button button-positive pull-right" ng-click="addFriend();" id="add-friend">
             Add

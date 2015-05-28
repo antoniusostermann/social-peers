@@ -3,7 +3,9 @@
   <h2>My friends pinboard</h2>
   <p ng-repeat="entry in entries track by $index">
     <strong>{{entry.date | date}}</strong>:
-    {{entry.content}}
+    {{entry.content}}<br>
+    Signatur: {{entry.signature_okay}}
+    <br><br>
   </p>
   </ion-content>
 </ion-view>

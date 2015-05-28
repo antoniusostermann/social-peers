@@ -1,11 +1,15 @@
 <ion-view view-title="Friends Pinboard">
   <ion-content padding="1">
-  <h2>My friends pinboard</h2>
-  <p ng-repeat="entry in entries track by $index">
-    <strong>{{entry.date | date}}</strong>:
-    {{entry.content}}<br>
-    Signatur: {{entry.signature_okay}}
-    <br><br>
-  </p>
+  <div class="list">
+    <a class="item item-avatar {{entry.element_class}}" ng-repeat="entry in entries track by $index">
+      <img src="img/avatar.jpg">
+      <h2>Written on {{entry.date | date}}</h2>
+      <p class="no-overflow entry-content">
+        {{entry.content}}
+      </p>
+      <p class="signature"><small><small> <span ng-show="entry.signature_okay" class="ion-checkmark-circled"></span> <span ng-show="!entry.signature_okay" class="ion-close-circled"></span> Signature <span ng-bind-html="entry.signature_text"></span>:
+       {{entry.signature}}</small></small></p>
+    </a>
+  </div>
   </ion-content>
 </ion-view>

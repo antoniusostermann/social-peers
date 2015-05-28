@@ -1,12 +1,17 @@
-<ion-view view-title="Pinboard">
+<ion-view view-title="My pinboard">
   <ion-content padding="1">
-  <h2>My pinboard</h2>
-  <a href="#" ng-click="openModal();">Add new entry</a><br>
-  <p ng-repeat="entry in entries track by $index">
-    <strong>{{entry.date | date}}</strong>:
-    {{entry.content}}<br>
-    Signatur: {{entry.signature}}
-  </p>
+  <button class="button button-full button-positive" ng-click="openModal();">
+    New Entry...
+  </button>
+  <br>
+  <div class="list">
+    <a class="item item-avatar" ng-repeat="entry in entries track by $index">
+      <img src="img/avatar.jpg">
+      <h2>Written on {{entry.date | date}}</h2>
+      <p class="no-overflow">{{entry.content}}</p>
+      <p><small><small>Signature: {{entry.signature}}</small></small></p>
+    </a>
+  </div>
     <script id="add-entry-modal.html" type="text/ng-template">
       <ion-modal-view>
         <ion-header-bar>
@@ -17,11 +22,10 @@
             <span class="input-label">Entry</span>
             <input type="text" placeholder="Entry"  id="new-entry">
           </label>
-          <button class="button button-positive pull-right" ng-click="addEntry();" id="add-entry">
+          <button class="button button-full button-positive" ng-click="addEntry();" id="add-entry">
             Add
           </button>
         </ion-content>
       </ion-modal-view>
     </script>
   </ion-content>
-</ion-view>

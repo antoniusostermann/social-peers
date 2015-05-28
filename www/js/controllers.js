@@ -74,9 +74,13 @@ angular.module('starter.controllers', [])
         hash.update(entry.content, "utf8");
         verified = public_key.verify(hash.digest().bytes(), entry.signature);
         if (verified) {
-          entry.signature_okay = "JA";
+          entry.signature_okay = true;
+          entry.element_class = "signature-okay";
+          entry.signature_text = "valid"
         }else{
-          entry.signature_okay = "NEIN";
+          entry.signature_okay = false;
+          entry.element_class = "signature-false";
+          entry.signature_text = "<strong>invalid</strong>"
         }
         entries.push(entry);
       }

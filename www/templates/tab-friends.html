@@ -1,22 +1,27 @@
-<ion-view view-title="Friends">
+<ion-view view-title="My Friends">
   <ion-content padding="1">
-    <p>
-      You want your friends to be able to sync your pinboard?
-      Just tell them your ID: {{own_id}}<br>
-      Alternativly, just <a href="#" ng-click="openModal();">add them
-      on your own</a>!
-    </p>
+    <div class="card">
+      <div class="item item-text-wrap">
+        <p>
+          If you want your friends to be able to sync your pinboard, you need to give them your id (<strong>{{own_id}}</strong>) and public key.<br>
+          <textarea ng-model="public_key" style="width: 100%;" rows="4"></textarea>
+          Alternativly, just <a href="#" ng-click="openModal();">add them
+          on your own</a>!
+        </p>
+      </div>
+    </div>
 
-    <p>In addition, with version 0.2, you will need to give them your public key:</p>
-    <textarea ng-model="public_key" cols="30" rows="8"></textarea>
 
-    <ul class="list">
-      <li class="item" ng-repeat="friend in friends track by $index">
-        <a ng-href="#/tab/friends/{{friend.id}}"><strong>{{friend.name}}</strong></a>
-        <small>({{friend.id}})</small>
-      </li>
-    </ul>
-
+    <div class="list">
+      <a class="item item-avatar" ng-repeat="friend in friends track by $index" ng-href="#/tab/friends/{{friend.id}}">
+        <img src="img/avatar.jpg">
+        <h2>{{friend.name}}</h2>
+        <p>({{friend.id}})</p>
+      </a>
+    </div>
+        <button class="button button-full button-positive" ng-click="openModal();">
+      Add new..
+    </button>
     <script id="add-friend-modal.html" type="text/ng-template">
       <ion-modal-view>
         <ion-header-bar>
@@ -34,7 +39,7 @@
           <label class="item item-input">
             <textarea placeholder="Public key" ng-model="new_friend.public_key"></textarea>
           </label>
-          <button class="button button-positive pull-right" ng-click="addFriend();" id="add-friend">
+          <button class="button button-full button-positive" ng-click="addFriend();" id="add-friend">
             Add
           </button>
         </ion-content>

@@ -1,1 +1,17 @@
 /* Empty. Add your own CSS if you like */
+.no-overflow {
+  white-space: normal !important;
+  text-overflow: clip !important;
+}
+
+.signature-okay .signature {
+  color: green;
+}
+
+.signature-false .signature {
+  color: red;
+}
+
+.signature-false .entry-content {
+  text-decoration: line-through;
+}
